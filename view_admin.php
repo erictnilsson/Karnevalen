@@ -47,8 +47,8 @@
                             echo '<td>' . $row['email'] . '</td>'; 
                             echo '<td>' . $row['phone_no'] . '</td>';  
                             echo '<td>' . $row['section_name'] . '</td>'; 
-                            echo '<td> <a href="edit.php?email='.$row['email'].'" class="btn btn-default" role="button">Ändra</a>
-                                       <a href="delete.php?email='.$row['email'].'" class="btn btn-danger" role="button">Ta bort</a> </td>'; 
+                            echo '<td> <a href="edit_student.php?email='.$row['email'].'" class="btn btn-default" role="button">Ändra</a>
+                                       <a href="delete_student.php?email='.$row['email'].'" class="btn btn-danger" role="button">Ta bort</a> </td>'; 
                             echo '</tr>'; 
                         }
                     }

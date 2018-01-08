@@ -2,7 +2,6 @@
 <body>
     <?php 
     include('nav.html');
-    include('aside.php');
 
     function renderForm($event_id, $firstname, $surname, $email, $show_title, $date, $no_seatings, $address, $av_seats, $error){ ?>
         <?php 
@@ -64,6 +63,7 @@
                 <a href="view_events.php" class="btn btn-default" role="button">Avbryt</a>
                 </div>
         </form>
+
 </body>
 
 <?php 
