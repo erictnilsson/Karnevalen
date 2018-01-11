@@ -1,0 +1,87 @@
+CREATE TABLE
+
+---MISC---
+Image(img_name, img_url); PK: img_url
+News(thumbnail, title, text, time_stamp); PK: {title, time_stamp}
+Time(start_time) PK: start_time
+
+CREATE TABLE Image(
+	img_name VARCHAR(255) NOT NULL, 
+	img_url VARCHAR(255)  NOT NULL, 
+	UNIQUE(img_name, img_url), 
+	PRIMARY KEY(img_url)
+); 
+
+CREATE TABLE News(
+	thumbnail     VARCHAR(255), 
+	title         VARCHAR(255) NOT NULL, 
+	content       VARCHAR(255), 
+	time_stamp DATETIME        NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+	PRIMARY KEY(title, time_stamp), 
+	FOREIGN KEY(thumbnail) REFERENCES Image(img_url) 
+); --Assumption: Text is not mandatory. 
+
+CREATE TABLE Time(
+	start_time DATETIME PRIMARY KEY
+); 
+-----------
+
+---ADMIN---
+login(username, password); PK: username
+student(first_name, surname, email, phone_no, section_name); PK: email. FK: section_name 
+section(name, capacity); PK: name 
+
+CREATE TABLE Login(
+	id int(10) NOT NULL AUTO_INCREMENT, 
+	username VARCHAR(255) NOT NULL, 
+	password VARCHAR(255) NOT NULL, 
+	PRIMARY KEY(id)
+); 
+
+CREATE TABLE Student(
+	first_name   VARCHAR(255) NOT NULL, 
+	surname      VARCHAR(255) NOT NULL, 
+	email        VARCHAR(255) PRIMARY KEY, 
+	phone_no     VARCHAR(255), 
+	section_name VARCHAR(255) NOT NULL, 
+	FOREIGN KEY(section_name) REFERENCES Section(name)
+); --Assumption: Phone_no is not mandatory
+
+CREATE TABLE Section(
+	name VARCHAR(255) PRIMARY KEY, 
+	capacity SMALLINT, 
+	description TEXT
+); 
+-------------
+
+---Booking---
+Event(show_name, date, no_seatings, address); PK: {show_name, date, address}. FK: show_name
+Show(name, description); PK: name
+Ticket(first_name, surname, email, show_name, date, address); PK: *. FK: {show_name, date, address} 
+
+CREATE TABLE `Event`(
+	id          INT AUTO_INCREMENT PRIMARY KEY, 
+	show_title  VARCHAR(255) NOT NULL, 
+	`date`      DATETIME     NOT NULL, 
+	no_seatings Int, 
+	address     VARCHAR(255) NOT NULL, 
+	UNIQUE(show_title, date, address), 
+	FOREIGN KEY(show_title) REFERENCES `Show`(title)
+); 
+
+CREATE TABLE `Show`(
+	title VARCHAR(255) PRIMARY KEY, 
+	img VARCHAR(255), 
+	description TEXT, 
+	FOREIGN KEY(img) REFERENCES Image(img_url)
+); --Assumption: A description is not mandatory
+
+CREATE TABLE Reservation(
+	id         INT AUTO_INCREMENT PRIMARY KEY, 
+	first_name VARCHAR(255) NOT NULL, 
+	surname    VARCHAR(255) NOT NULL, 
+	email      VARCHAR(255) NOT NULL, 
+	event_id   INT          NOT NULL, 
+	FOREIGN KEY(event_id) REFERENCES `Event`(id)
+); 
+-------------

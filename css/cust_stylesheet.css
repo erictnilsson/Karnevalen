@@ -18,13 +18,25 @@ p{
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Oswald', sans-serif;
+    color: 	#5557cb; 
 }
 
 .navbar-default{
-    background-color:#2C3E50;
+    background-color:#ec5858;
     border-color: white;
     color: white;
 
+}
+
+.navbar-inverse{
+    background-color:#ec5858;
+    border-color: white;
+    color: white;
+
+}
+
+.navbar-inverse .navbar-text{
+    color: white; 
 }
 
 .navbar-default .navbar-brand{
@@ -33,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus{
-    color: #18BC9C;
+    color: #f4d487;
     background-color: transparent;
 }
 
@@ -45,24 +57,24 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-default .navbar-nav .active > a:hover,
 .navbar-default .navbar-nav .active > a:focus{
     color: white;
-    background-color: #1a242f;
+    background-color: #ec5858;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus{
-    color: #18BC9C; 
+    color: #f4d487; 
     background-color: transparent;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus{
-    background-color: #1a242f;
+    background-color: 	#82d6b6;
     color: white;
 }
 
 .btn-primary{
-    background-color: #2C3E50;
-    border-color: #2C3E50;
+    background-color: 	#c493f6;
+    border-color: 	#c493f6;
     color: white;
 }
 .btn-primary:hover,
@@ -71,8 +83,8 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary.active, 
 .open .dropdown-toggle.btn-primary{
     color: white;
-    background-color: #1E2A36;
-    border-color: #161F29; 
+    background-color: #ebd784;
+    border-color: 	#ebd784; 
 }
 
 .btn-success{
@@ -93,10 +105,15 @@ h1, h2, h3, h4, h5, h6 {
 .home-thumb img:hover{
     transform: scale(1.1); 
 }
+
+
 .thumbnail img{
     transition: all 0.3s ease 0s;
     width: 100%;
 }
+
+
+
 .thumbnail {
     overflow: hidden;
 }
@@ -107,34 +124,49 @@ h1, h2, h3, h4, h5, h6 {
    padding-bottom: 10px; 
 }
 
-
 .bg-grey{
     background-color: #f9f9f9;
 }
 
 .img-circle{
     border-radius: 50%;
-}
-
-.carousel-inner{
-    margin-bottom: 20px;
+    height: 250px; 
+    width: 250px;
+    
 }
 
 .aside{
-    display: block;
-	float: right;
-	height: 130%;
+    display: block; 
+	float: right; 
+	height: 130%; 
 	width: 30%;
 	overflow: auto;
 }
 
-.section {
-    /*display: block; */
-	float: left;
-	/*height: 100%;*/
-	/*width: 30%;*/
-	overflow: auto;
-	
+
+.section{
+    display: block; 
+	float: left; 
+	height: 130%; 
+	width: 30%;
+    overflow: auto;
+}
+
+    .om{
+    height: 100%;
+    }
+
+    .cardo{
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+
+    .card{
+    padding-left: 45px;
+
 }
 
 .carousel-inner{
@@ -147,54 +179,115 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 43px;
 }
 
-.form-horizontal{
-   /*padding-right: 600px; */
-}
-
-#map {
-    height: 500px; 
-    width: 50%;
+div#map {
+    height: 600px; 
+    width: 100%;
 
 }
 
-#shoo{
-    padding-left: 100px;
+.carousel-inner > .item > img {
+    margin: 0 auto;
 }
 
-@keyframes slidy {
-    0% { left: 0%; }
-    20% { left: 0%; }
-    25% { left: -100%; }
-    45% { left: -100%; }
-    50% { left: -200%; }
-    70% { left: -200%; }
-    75% { left: -300%; }
-    95% { left: -300%; }
-    100% { left: -400%; }
-    }
-    
-    body { margin: 0; }
-    
-    
-    div#slider { 
-        width: 100%;
-        overflow: hidden;
+#slideshow { 
+    margin: 50px auto; 
+    position: relative; 
+    width: 240px; 
+    height: 240px; 
+    padding: 10px; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+}
+
+#slideshow > div { 
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+    right: 10px; 
+    bottom: 10px; 
+}
+
+.container-fluid{
+    padding: 0; 
+    background-image: url('img/Karneval2010031.jpg') center center no-repeat;
+}
+
+
+    .card-img-top{
         padding-top: 10px;
-       /* margin: 30px auto; */
-       margin-left: 1rem;
-      
-    }
-    
-    div#slider figure img{ 
-        width: 20%; float: left; 
-    }
-    div#slider figure{ 
-      position: relative;
-      width: 500%;
-      margin: 0;
-      left: 0;
-      text-align: left;
-      font-size: 0;
-      animation: 30s slidy infinite linear; 
     }
 
+    .embed-responsive{
+        padding-bottom: 10px;
+        width: 100%;
+        height: 100%;
+        
+    }
+
+    .panel-title{
+        text-align: center;
+    }
+
+    .card-title{
+       text-align: center;
+    }
+
+    .card-block h4{
+        text-align: left;
+    }
+
+    .card-block h4{
+        text-align: left;
+    }
+
+    .slider {
+    width: 100%;
+    height: 315px;
+    margin-left: 1rem;
+    padding-top: 10px;
+	
+}
+
+.slider-wrapper {
+	width: 100%;
+	height: 100%;
+    position: relative;
+}
+
+.slide {
+	float: left;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 2s linear;
+}
+
+.slider-wrapper > .slide:first-child {
+	opacity: 1;
+}
+
+.page-header p{
+    margin-top: 5px;
+}
+
+p{
+    padding-top: 6px;
+}
+
+.håkanhåkan{
+    height: 350px;
+    width: 400px;
+}
+
+table.table-bordered{
+    padding-left: 200px;
+}
+
+.train{
+    padding-top: 0.5rem;
+}
+
+.ansok{
+    margin-left: 8px;
+    width: 100%;
+}

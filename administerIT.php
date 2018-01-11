@@ -1,7 +1,7 @@
-<?php require('header.html');?>
+<?php require('./header.html');?>
 <body>
     <?php 
-        require('nav.html');
+        require('.nav.html');
         
         // connect
         include('./connection/config.php'); 
@@ -26,9 +26,9 @@
     </div>
     <div class="container">
         <div class="thumbnail">
-            <img src="img/Karnevalen06 51.jpg" alt="Karnevalen06 43">
+            <img src="./img/Karnevalen06 51.jpg" alt="Karnevalen06 43">
         </div>
         <p><?php echo $desc?></p>
     </div>
-    <?php require('footer.php'); ?>
+    <?php include('footer.php'); ?>
 </body>

@@ -7,7 +7,7 @@
             <div class="page-header">
                 <h1>Ansök</h1>    
             </div>
-            <div class="container">
+            <div class="col-sm-10">
                 <div class="thumbnail">
                     <img src="img/Karnevalen06 43.jpg" alt="Karnevalen06 43">
                 </div>

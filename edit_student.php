@@ -48,9 +48,9 @@ function renderForm($email, $firstname, $surname, $phone_no, $section, $error) {
             ?>
         </select>
     </div>
-    <p>* Required </p>
+    <p>* Krävs </p>
     <input type="submit" name="submit" class="btn btn-primary" value="Ändra">
-    <a href="view.php" class="btn btn-default" role="button">Avbryt</a>
+    <a href="view_admin.php" class="btn btn-default" role="button">Avbryt</a>
     </form>
     </div>
 </body>

@@ -2,7 +2,10 @@
     <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
             <div class="container">
                 <div class="navbar-text pull-left">
-                    <p class="text-left">© Lundakarnevalen 2018</p>  
+                    <p class="text-left"> <?php echo "Senast uppdaterad: " . date ("F d Y H:i:s.", getlastmod()); ?> </p>
+                </div>
+                <div class="navbar-text text-center">
+                <p class="text-center"> Grupp 10: Eric Nilsson, Haris Eminovic</p>
                 </div>
                 <div class="navbar-text pull-right">
                     <p class="text-center" id="countdown"></p>
@@ -12,6 +15,7 @@
 </footer>
 
 <?php 
+
 include('./connection/config.php'); 
 
 $sql = "SELECT * FROM time"; 
@@ -28,8 +32,6 @@ if (mysqli_num_rows($result) > 0) {
 mysqli_close($conn); 
 ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 var end_time = new Date("<?php echo $end_time ?>").getTime();
 
@@ -44,7 +46,7 @@ var x = setInterval(function() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s " + " till startskottet" ;
+    + minutes + "m " + seconds + "s " + " till Lundakarnevalen 2018" ;
 
     if (distance < 0) {
         clearInterval(x); 

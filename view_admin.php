@@ -4,9 +4,21 @@
     require('nav.html'); 
 ?>
 <body>
+
+    <style type="text/css">
+        
+        .jumbotron{
+            background-color: #5557cb;
+            background-size: cover;
+            color: white;
+        }
+    </style>
+
+
+    <!-- Jumbotron -->
     <div class="container"> 
-        <div class="jumbotron centered-text">
-            <h1>Admin-vy för admin '<?php echo $login_session ?>' </h1>
+        <div class="jumbotron text-center">
+            <h1>Admin-vy för '<?php echo $login_session ?>' </h1>
         </div>
     </div>
 
@@ -60,6 +72,7 @@
     </div>
         <div class="container"> 
             <a href="new_student.php" class="btn btn-primary" role="button">Registrera funktionär</a>
+            <a href="admin_mail.php" class="btn btn-primary" role="button">Skicka mail</a>
             <a href="logout.php" class="btn btn-warning" role="button">Logga ut</a>
         </div>
 
